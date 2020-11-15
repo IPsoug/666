@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猜数字游戏</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><pre><code class="prism language-python"><span class="token keyword">import</span> random
+n<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">50</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+i<span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">while</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">:</span>
+a<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>“猜数字：”<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>a <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>“你猜的小了”<span class="token punctuation">)</span>
+i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token keyword">elif</span><span class="token punctuation">(</span>a <span class="token operator">&gt;</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>“你猜的大了”<span class="token punctuation">)</span>
+i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>“恭喜你猜对了”<span class="token punctuation">)</span>
+<span class="token keyword">break</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>“你已经猜了<span class="token number">5</span>次了，你输了”<span class="token punctuation">)</span>
+</code></pre>
+</div>
+</body>
+
+</html>
