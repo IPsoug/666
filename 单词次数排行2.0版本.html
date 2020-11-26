@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5412</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><pre><code class="prism language-python"><span class="token operator">%</span><span class="token operator">%</span>writefile base<span class="token punctuation">.</span>py
+<span class="token comment">#打开并读取文件</span>
+<span class="token builtin">file</span><span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span>r<span class="token string">'C:\Users\Administrator\Desktop\Walden.txt'</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">)</span>
+lines<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#要把每行拆成单词</span>
+words<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
+    tmp_list<span class="token operator">=</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> word <span class="token keyword">in</span> tmp_list<span class="token punctuation">:</span>
+        words<span class="token punctuation">.</span>append<span class="token punctuation">(</span>word<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'"'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+words
+
+
+
+<span class="token comment">#对words中每一个元素计算他出现的个数</span>
+<span class="token comment">#把统计结果保存到字典中，字典的key是单词，value是单词出现的次数</span>
+word_count<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+word_set<span class="token operator">=</span><span class="token builtin">set</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span>
+<span class="token keyword">for</span> word <span class="token keyword">in</span> word_set<span class="token punctuation">:</span>
+    count_num<span class="token operator">=</span>words<span class="token punctuation">.</span>count<span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+    word_count<span class="token punctuation">[</span>word<span class="token punctuation">]</span><span class="token operator">=</span>count_num
+    
+word_count
+
+
+
+<span class="token comment">#对word_count字典进行排序，按照出现的次数（value）进行降序排序</span>
+<span class="token builtin">sorted</span><span class="token punctuation">(</span>word_count<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> item<span class="token punctuation">:</span> item<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+</code></pre>
+<pre><code>Writing base.py
+</code></pre>
+</div>
+</body>
+
+</html>
